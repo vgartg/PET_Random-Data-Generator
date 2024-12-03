@@ -53,3 +53,7 @@ puts RandomDataGenerator.random_date(Date.new(2020, 1, 1), Date.new(2025, 12, 31
 
 ## Тесты и rubocop
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/PYzSf6w/photo-2024-04-23-21-31-03.jpg" alt="photo-2024-04-23-21-31-03" border="0"></a>
+
+## Пример вывода
+<a href="https://ibb.co/mhNYVvQ"><img src="https://i.ibb.co/Zc2wpHy/photo-2024-04-23-22-59-10.jpg" alt="photo-2024-04-23-22-59-10" border="0"></a>
+
