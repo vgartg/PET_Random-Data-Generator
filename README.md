@@ -4,22 +4,14 @@
 ### Тема утверждена Горшковым Сергеем Андреевичем
 Random Data Generator - это библиотека на Ruby для генерации случайных данных различных типов, таких как строки, числа, даты и многое другое
 
-## Установка
-
-Вы можете установить библиотеку, используя Bundler:
-
-```bash
-gem 'random-data-generator'
-```
-
-или установите ее напрямую с помощью gem install:
-
-```bash
-gem install random-data-generator
-```
-
 ## Использование
-Пример использования библиотеки:
+
+### Запуск тестов:
+```ruby
+bundle exec rspec
+```
+
+### Пример использования библиотеки:
 
 ```ruby
 require 'random_data_generator'
@@ -40,7 +32,7 @@ puts RandomDataGenerator.random_number(1, 100)
 puts RandomDataGenerator.random_date(Date.new(2020, 1, 1), Date.new(2025, 12, 31))
 ```
 
-# Дополнительные методы
+## Дополнительные методы
 ## Библиотека также предоставляет дополнительные методы для генерации случайных данных:
 
 ```RandomDataGenerator.random_alpha_numeric_string(length)``` генерирует случайную алфавитно-цифровую строку заданной длины
@@ -52,4 +44,8 @@ puts RandomDataGenerator.random_date(Date.new(2020, 1, 1), Date.new(2025, 12, 31
 ```RandomDataGenerator.random_email``` генерирует случайный адрес электронной почты
 
 ## Тесты и rubocop
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/PYzSf6w/photo-2024-04-23-21-31-03.jpg" alt="photo-2024-04-23-21-31-03" border="0"></a>
+![Screenshot 1](https://i.ibb.co/v3CnVD8/photo-2024-04-24-00-41-29.jpg)
+
+## Пример вывода
+![Screenshot 2](https://i.ibb.co/GtnmPty/photo-2024-04-24-00-41-59.jpg)
+
