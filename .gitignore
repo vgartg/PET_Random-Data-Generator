@@ -1,0 +1,27 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+# Ignore .env file containing sensitive information.
+.env
+
+# Ignore macOS metadata files.
+.DS_Store
+
+# Ignore system-specific files.
+/.byebug_history
+/coverage/
+/yarn-error.log
+/public/system
+/public/uploads
+/node_modules/
+
+# Ignore IDE specific directories.
+.idea/
