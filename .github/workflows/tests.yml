@@ -20,9 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          gem install bundler
-          gem install bundler -v 2.4.22
-          bundle install
+          gem install bundler -v 2.2.22
+          bundle _2.2.22_ install
 
       - name: Run tests
-        run: bundle exec rspec
+        run: bundle _2.2.22_ exec rspec
