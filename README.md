@@ -33,7 +33,7 @@ puts RandomDataGenerator.random_date(Date.new(2020, 1, 1), Date.new(2025, 12, 31
 ```
 
 ## Дополнительные методы
-## Библиотека также предоставляет дополнительные методы для генерации случайных данных:
+### Библиотека также предоставляет дополнительные методы для генерации случайных данных:
 
 ```RandomDataGenerator.random_alpha_numeric_string(length)``` генерирует случайную алфавитно-цифровую строку заданной длины
 
@@ -48,4 +48,8 @@ puts RandomDataGenerator.random_date(Date.new(2020, 1, 1), Date.new(2025, 12, 31
 
 ## Пример вывода
 ![Screenshot 2](https://i.ibb.co/GtnmPty/photo-2024-04-24-00-41-59.jpg)
+
+## Добавлены автоматические тесты в GitHub
+[![Screenshot 1](https://i.ibb.co/Z10cJJB/photo-2024-04-24-10-57-13.jpg)](https://ibb.co/gFxt77S)
+[![Screenshot 2](https://i.ibb.co/H2Yk9D7/photo-2024-04-24-10-57-13-2.jpg)](https://ibb.co/YW8qV72)
 
