@@ -38,7 +38,7 @@ puts RandomDataGenerator.random_string(10)
 puts RandomDataGenerator.random_number(1, 100)
 ```
 
-### Генерация случайной даты в диапазоне с 1 января 2020 по 31 декабря 2025
+#### Генерация случайной даты в диапазоне с 1 января 2020 по 31 декабря 2025
 ```
 puts RandomDataGenerator.random_date(Date.new(2020, 1, 1), Date.new(2025, 12, 31))
 ```
