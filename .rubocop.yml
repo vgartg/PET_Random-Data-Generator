@@ -1,0 +1,36 @@
+# rubocop.yml
+
+# AllCops section defines global settings.
+AllCops:
+  # Exclude the spec directory from inspection
+  Exclude:
+    - 'spec/**/*'
+
+# Style/Documentation
+Style/Documentation:
+  Enabled: false
+
+# Style/SymbolProc
+Style/SymbolProc:
+  Enabled: false
+
+# Layout/EmptyLineAfterMagicComment
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+
+# Layout/EndOfLine
+Layout/EndOfLine:
+  Enabled: false
+
+# Layout/TrailingEmptyLines
+Layout/TrailingEmptyLines:
+  Enabled: false
+
+# Metrics/BlockLength
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+# Style/StringLiterals
+Style/StringLiterals:
+  Enabled: false

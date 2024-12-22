@@ -25,3 +25,15 @@
 
 # Ignore IDE specific directories.
 .idea/
+
+# Ignore Gemfile.lock, as it should be managed with Bundler.
+Gemfile.lock
+
+# Ignore the Ruby gem installation directory.
+/vendor/bundle
+
+# Ignore node_modules directory for Node.js dependencies.
+/node_modules/
+
+# Ignore yarn lock file.
+yarn.lock
