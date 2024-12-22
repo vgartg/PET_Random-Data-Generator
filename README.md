@@ -55,12 +55,11 @@ puts RandomDataGenerator.random_date(Date.new(2020, 1, 1), Date.new(2025, 12, 31
 ```RandomDataGenerator.random_email``` генерирует случайный адрес электронной почты
 
 ## Тесты и rubocop
-![Screenshot 1](https://i.ibb.co/v3CnVD8/photo-2024-04-24-00-41-29.jpg)
+![Screenshot 1](https://i.ibb.co/w6X64TB/photo-2024-04-25-21-10-48.jpg)
 
 ## Пример вывода
-![Screenshot 2](https://i.ibb.co/GtnmPty/photo-2024-04-24-00-41-59.jpg)
+![Screenshot 2](https://i.ibb.co/jgFhbBM/photo-2024-04-25-21-12-08.jpg)
 
 ## Добавлены автоматические тесты в GitHub
-[![Screenshot 1](https://i.ibb.co/Z10cJJB/photo-2024-04-24-10-57-13.jpg)](https://ibb.co/gFxt77S)
-[![Screenshot 2](https://i.ibb.co/H2Yk9D7/photo-2024-04-24-10-57-13-2.jpg)](https://ibb.co/YW8qV72)
+![Screenshot 3](https://i.ibb.co/rGNkBcx/photo-2024-04-25-21-13-26.jpg)
 
