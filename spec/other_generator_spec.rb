@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Load necessary modules
-require_relative '../lib/other_generator'
+require_relative '../lib/random_data_generator/other_generator'
 require 'date'
 
 RSpec.describe RandomDataGenerator::OtherGenerator do

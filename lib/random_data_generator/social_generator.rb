@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 #
-require_relative '../lib/string_generator'
+require_relative 'string_generator'
 
 module RandomDataGenerator
   module SocialGenerator
