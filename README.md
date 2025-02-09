@@ -25,7 +25,10 @@ ruby src/demonstration.rb
 
 #### Подключение библиотеки
 ```ruby
-require 'random_data_generator'
+require_relative '../lib/random_data_generator/address_generator'
+require_relative '../lib/random_data_generator/other_generator'
+require_relative '../lib/random_data_generator/social_generator'
+require_relative '../lib/random_data_generator/string_generator'
 ```
 
 #### Генерация случайной строки длиной 10 символов
