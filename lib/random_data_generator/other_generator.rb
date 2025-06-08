@@ -2,30 +2,40 @@
 
 module RandomDataGenerator
   module OtherGenerator
-    # Method to read words from a file
-    def self.read_words(file_path)
-      File.readlines(file_path).flat_map { |line| line.split }
-    end
+    RESOURCES_DIR = File.expand_path('../../resources', __dir__)
 
-    # Generates a random text description.
+    DESCRIPTIONS = File.readlines(File.join(RESOURCES_DIR, 'descriptions.txt'))
+                       .map(&:strip)
+                       .reject(&:empty?)
+                       .freeze
+
     def self.random_text_description
-      descriptions = File.readlines('resources/descriptions.txt').map(&:strip)
-      descriptions.sample
+      DESCRIPTIONS.sample
     end
 
-    # Generates a random number within the specified range.
     def self.random_number(min, max)
       rand(min..max)
     end
 
-    # Generates a random date within the specified range.
     def self.random_date(start_date, end_date)
       rand(start_date..end_date)
     end
 
-    # Generates a random color.
     def self.random_color
-      "##{rand(0..0xFFFFFF).to_s(16).rjust(6, '0')}"
+      "##{rand(0..0xFFFFFF).to_s(16).rjust(6, '0').upcase}"
+    end
+
+    def self.random_boolean
+      [true, false].sample
+    end
+
+    def self.random_uuid
+      hex = Array.new(16) { rand(256) }
+      hex[6] = (hex[6] & 0x0F) | 0x40
+      hex[8] = (hex[8] & 0x3F) | 0x80
+      hex.map { |b| b.to_s(16).rjust(2, '0') }.join.then do |s|
+        "#{s[0..7]}-#{s[8..11]}-#{s[12..15]}-#{s[16..19]}-#{s[20..31]}"
+      end
     end
   end
 end

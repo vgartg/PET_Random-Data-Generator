@@ -1,36 +1,49 @@
-# rubocop.yml
+require:
+  - rubocop-rspec
 
-# AllCops section defines global settings.
 AllCops:
-  # Exclude the spec directory from inspection
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  SuggestExtensions: false
   Exclude:
-    - 'spec/**/*'
+    - 'vendor/**/*'
+    - 'web/**/*'
+    - 'bin/*'
+    - 'node_modules/**/*'
 
-# Style/Documentation
 Style/Documentation:
   Enabled: false
 
-# Style/SymbolProc
-Style/SymbolProc:
-  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
 
-# Layout/EmptyLineAfterMagicComment
-Layout/EmptyLineAfterMagicComment:
-  Enabled: false
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
 
-# Layout/EndOfLine
-Layout/EndOfLine:
-  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: true
 
-# Layout/TrailingEmptyLines
-Layout/TrailingEmptyLines:
-  Enabled: false
+Layout/LineLength:
+  Max: 120
 
-# Metrics/BlockLength
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+    - 'api/app.rb'
+    - 'random_data_generator.gemspec'
+    - 'Rakefile'
 
-# Style/StringLiterals
-Style/StringLiterals:
-  Enabled: false
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/ClassLength:
+  Max: 200
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Max: 5
+
+RSpec/NestedGroups:
+  Max: 4
