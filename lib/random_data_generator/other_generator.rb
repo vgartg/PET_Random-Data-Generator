@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'securerandom'
+
 module RandomDataGenerator
   module OtherGenerator
     RESOURCES_DIR = File.expand_path('../../resources', __dir__)
@@ -30,12 +32,7 @@ module RandomDataGenerator
     end
 
     def self.random_uuid
-      hex = Array.new(16) { rand(256) }
-      hex[6] = (hex[6] & 0x0F) | 0x40
-      hex[8] = (hex[8] & 0x3F) | 0x80
-      hex.map { |b| b.to_s(16).rjust(2, '0') }.join.then do |s|
-        "#{s[0..7]}-#{s[8..11]}-#{s[12..15]}-#{s[16..19]}-#{s[20..31]}"
-      end
+      SecureRandom.uuid
     end
   end
 end

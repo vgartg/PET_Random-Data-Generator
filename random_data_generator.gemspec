@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
                      'API and a Vite/TypeScript frontend.'
   spec.homepage    = 'https://github.com/vgartg/PET_Random-Data-Generator'
   spec.license     = 'MIT'
-  spec.required_ruby_version = '>= 3.0.0'
+  spec.required_ruby_version = '>= 3.2.0'
 
   spec.files = Dir['lib/**/*.rb'] + Dir['resources/**/*'] + %w[LICENSE.txt README.md]
   spec.require_paths = ['lib']

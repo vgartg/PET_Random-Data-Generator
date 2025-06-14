@@ -17,6 +17,8 @@ module RandomDataGenerator
       set :raise_errors, false
       set :public_folder, File.expand_path('../web/dist', __dir__)
       set :default_content_type, 'application/json'
+      set :host_authorization, { permitted_hosts: [] }
+      disable :protection
     end
 
     before do
@@ -41,23 +43,26 @@ module RandomDataGenerator
 
     helpers do
       def int_param(name, default:, min: nil, max: nil)
-        value = params[name]&.to_s
-        return default if value.nil? || value.empty?
+        raw = params[name]&.to_s
+        return default if raw.nil? || raw.empty?
 
-        parsed = Integer(value, 10)
-        raise ArgumentError, "#{name} must be >= #{min}" if min && parsed < min
-        raise ArgumentError, "#{name} must be <= #{max}" if max && parsed > max
-
+        parsed = Integer(raw, 10)
+        check_int_bounds!(name, parsed, min, max)
         parsed
       rescue ArgumentError => e
         halt 400, json(error: 'invalid_param', param: name.to_s, message: e.message)
       end
 
-      def date_param(name, default:)
-        value = params[name]&.to_s
-        return default if value.nil? || value.empty?
+      def check_int_bounds!(name, value, min, max)
+        raise ArgumentError, "#{name} must be >= #{min}" if min && value < min
+        raise ArgumentError, "#{name} must be <= #{max}" if max && value > max
+      end
 
-        Date.iso8601(value)
+      def date_param(name, default:)
+        raw = params[name]&.to_s
+        return default if raw.nil? || raw.empty?
+
+        Date.iso8601(raw)
       rescue ArgumentError
         halt 400, json(error: 'invalid_param', param: name.to_s,
                        message: 'expected ISO 8601 date (YYYY-MM-DD)')

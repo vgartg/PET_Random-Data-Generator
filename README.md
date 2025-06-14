@@ -16,12 +16,6 @@ The project exposes a catalog of generators — strings, numbers, dates, address
 
 A typical use case: you need a couple of plausible emails, a city, a UUID and a hex color while wiring up a demo, and you do not want to bring in Faker or write yet another helper script
 
----
-
-<img width="1080" height="780" alt="image" src="https://github.com/user-attachments/assets/b6c5f337-0109-4853-9e54-4ea8f4c79a87" />
-
----
-
 ## Architecture
 
 ```
