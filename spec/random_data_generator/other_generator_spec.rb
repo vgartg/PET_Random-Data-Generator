@@ -32,7 +32,7 @@ RSpec.describe RandomDataGenerator::OtherGenerator do
 
   describe '.random_boolean' do
     it 'returns true or false' do
-      expect([true, false]).to include(described_class.random_boolean)
+      expect(described_class.random_boolean).to be(true).or be(false)
     end
   end
 

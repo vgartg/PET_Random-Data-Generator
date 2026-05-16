@@ -101,7 +101,8 @@ function renderGrid(): void {
   grid.innerHTML = '';
   if (cards.length === 0) {
     const empty = document.createElement('div');
-    empty.className = 'col-span-full rounded-xl border border-dashed border-slate-300 p-10 text-center text-slate-500';
+    empty.className =
+      'col-span-full rounded-xl border border-dashed border-slate-300 p-10 text-center text-slate-500';
     empty.textContent = 'No generators match your filters';
     grid.appendChild(empty);
     return;

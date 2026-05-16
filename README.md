@@ -2,10 +2,8 @@
 
 [![CI](https://github.com/vgartg/PET_Random-Data-Generator/actions/workflows/ci.yml/badge.svg)](https://github.com/vgartg/PET_Random-Data-Generator/actions/workflows/ci.yml)
 [![Ruby](https://img.shields.io/badge/ruby-3.3-CC342D?logo=ruby&logoColor=white)](https://www.ruby-lang.org/)
-[![Sinatra](https://img.shields.io/badge/sinatra-4.1-000000?logo=sinatra&logoColor=white)](http://sinatrarb.com/)
 [![TypeScript](https://img.shields.io/badge/typescript-5.5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/tailwind-3.4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
 
 > A small Ruby library, a Sinatra JSON API and a TypeScript single-page UI for producing believable fake data on demand — built as a pet project to practice end-to-end Ruby + web tooling
@@ -157,7 +155,3 @@ resources/descriptions.txt                 # ~50 prose snippets
 - Optional CSV / NDJSON bulk export (`?count=100`)
 - Locale-aware names and addresses (`?locale=ru`)
 - Dockerfile + `docker-compose.yml` for one-line setup
-
-## License
-
-Released under the [MIT License](LICENSE.txt)

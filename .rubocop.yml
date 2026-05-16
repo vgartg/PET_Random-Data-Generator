@@ -1,4 +1,4 @@
-require:
+plugins:
   - rubocop-rspec
 
 AllCops:
@@ -22,6 +22,9 @@ Style/StringLiteralsInInterpolation:
 
 Style/FrozenStringLiteralComment:
   Enabled: true
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
 
 Layout/LineLength:
   Max: 120

@@ -4,9 +4,7 @@ export function showToast(message: string, variant: 'success' | 'error' = 'succe
   toast.className = [
     'pointer-events-auto translate-y-2 opacity-0 transition-all duration-200',
     'rounded-lg px-4 py-2 text-sm font-medium shadow-lg',
-    variant === 'success'
-      ? 'bg-slate-900 text-white'
-      : 'bg-ruby-600 text-white',
+    variant === 'success' ? 'bg-slate-900 text-white' : 'bg-ruby-600 text-white',
   ].join(' ');
   toast.textContent = message;
   container.appendChild(toast);
