@@ -2,10 +2,8 @@
 
 [![CI](https://github.com/vgartg/PET_Random-Data-Generator/actions/workflows/ci.yml/badge.svg)](https://github.com/vgartg/PET_Random-Data-Generator/actions/workflows/ci.yml)
 [![Ruby](https://img.shields.io/badge/ruby-3.3-CC342D?logo=ruby&logoColor=white)](https://www.ruby-lang.org/)
-[![Sinatra](https://img.shields.io/badge/sinatra-4.1-000000?logo=sinatra&logoColor=white)](http://sinatrarb.com/)
 [![TypeScript](https://img.shields.io/badge/typescript-5.5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/tailwind-3.4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
 
 > A small Ruby library, a Sinatra JSON API and a TypeScript single-page UI for producing believable fake data on demand — built as a pet project to practice end-to-end Ruby + web tooling
@@ -17,6 +15,12 @@
 The project exposes a catalog of generators — strings, numbers, dates, addresses, social data, URLs, UUIDs, colors — and lets you call them from three places: a Ruby library, an HTTP API, or a clickable web UI
 
 A typical use case: you need a couple of plausible emails, a city, a UUID and a hex color while wiring up a demo, and you do not want to bring in Faker or write yet another helper script
+
+---
+
+<img width="1080" height="780" alt="image" src="https://github.com/user-attachments/assets/b6c5f337-0109-4853-9e54-4ea8f4c79a87" />
+
+---
 
 ## Architecture
 
@@ -157,7 +161,3 @@ resources/descriptions.txt                 # ~50 prose snippets
 - Optional CSV / NDJSON bulk export (`?count=100`)
 - Locale-aware names and addresses (`?locale=ru`)
 - Dockerfile + `docker-compose.yml` for one-line setup
-
-## License
-
-Released under the [MIT License](LICENSE.txt)
