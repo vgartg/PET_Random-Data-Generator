@@ -1,53 +1,46 @@
 # frozen_string_literal: true
-#
+
 require_relative 'string_generator'
 
 module RandomDataGenerator
   module SocialGenerator
-    # Generates a random email address.
+    EMAIL_DOMAINS = %w[gmail yahoo outlook example].freeze
+    EMAIL_TLDS = %w[com net org co.uk].freeze
+    FIRST_NAMES = %w[John Jane Michael Sarah James Emily Robert Olivia William Sophia].freeze
+    LAST_NAMES = %w[Smith Johnson Williams Jones Brown Davis Miller Wilson Moore Taylor].freeze
+    ANIMALS = %w[Dog Cat Rabbit Bird Fish Elephant Tiger Lion Wolf Fox Bear Otter].freeze
+    COMPANY_PREFIXES = %w[ABC XYZ Best First Global Smart Bright Quantum Nova Apex].freeze
+    COMPANY_SUFFIXES = %w[Inc Ltd LLC Corp Ltda SA GmbH BV].freeze
+    URL_SCHEMES = %w[http https].freeze
+    URL_TLDS = %w[com net org edu gov io dev].freeze
+
     def self.random_email
-      username = StringGenerator.random_string(8)
-      domain = %w[gmail yahoo outlook example].sample
-      domain_extension = %w[com net org co.uk].sample
-      "#{username}@#{domain}.#{domain_extension}"
+      username = StringGenerator.random_string(8).downcase
+      "#{username}@#{EMAIL_DOMAINS.sample}.#{EMAIL_TLDS.sample}"
     end
 
-    # Generates a random IP address.
     def self.random_ip_address
-      (1..4).map { rand(256) }.join('.')
+      Array.new(4) { rand(256) }.join('.')
     end
 
-    # Generates a random phone number.
     def self.random_phone_number
-      country_code = '+1' # Example country code
-      "#{country_code}-#{rand(100..999)}-#{rand(100..999)}-#{rand(1000..9999)}"
+      "+1-#{rand(100..999)}-#{rand(100..999)}-#{rand(1000..9999)}"
     end
 
-    # Generates a random person name.
     def self.random_person_name
-      first_names = %w[John Jane Michael Sarah James Emily]
-      last_names = %w[Smith Johnson Williams Jones Brown]
-      "#{first_names.sample} #{last_names.sample}"
+      "#{FIRST_NAMES.sample} #{LAST_NAMES.sample}"
     end
 
-    # Generates a random animal name.
     def self.random_animal_name
-      animals = %w[Dog Cat Rabbit Bird Fish Elephant]
-      "#{animals.sample}-#{rand(1000..9999)}"
+      "#{ANIMALS.sample}-#{rand(1000..9999)}"
     end
 
-    # Generates a random company name.
     def self.random_company_name
-      company_suffixes = %w[Inc Ltd LLC Corp Ltda SA]
-      company_prefixes = %w[ABC XYZ Best First Global Smart]
-      "#{company_prefixes.sample} #{company_suffixes.sample}"
+      "#{COMPANY_PREFIXES.sample} #{COMPANY_SUFFIXES.sample}"
     end
 
-    # Generates a random URL.
     def self.random_url
-      schemes = %w[http https]
-      extensions = %w[com net org edu gov]
-      "#{schemes.sample}://www.example#{rand(100..999)}.#{extensions.sample}"
+      "#{URL_SCHEMES.sample}://www.example#{rand(100..999)}.#{URL_TLDS.sample}"
     end
   end
 end

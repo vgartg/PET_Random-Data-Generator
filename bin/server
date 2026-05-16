@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+lib_path = File.expand_path('../lib', __dir__)
+$LOAD_PATH.unshift(lib_path) unless $LOAD_PATH.include?(lib_path)
+
+api_path = File.expand_path('..', __dir__)
+$LOAD_PATH.unshift(api_path) unless $LOAD_PATH.include?(api_path)
+
+require 'rack'
+require 'api/app'
+
+Rack::Handler.default.run(RandomDataGenerator::API, Port: ENV.fetch('PORT', 3000).to_i)

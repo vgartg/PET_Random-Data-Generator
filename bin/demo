@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+lib_path = File.expand_path('../lib', __dir__)
+$LOAD_PATH.unshift(lib_path) unless $LOAD_PATH.include?(lib_path)
+
+require 'date'
+require 'random_data_generator'
+
+include RandomDataGenerator
+
+puts '=== StringGenerator ==='
+puts "Random String:               #{StringGenerator.random_string(10)}"
+puts "Random Alpha-Numeric String: #{StringGenerator.random_alpha_numeric_string(10)}"
+puts "Random Letter String:        #{StringGenerator.random_letter_string(10)}"
+puts
+
+puts '=== OtherGenerator ==='
+puts "Random Text Description: #{OtherGenerator.random_text_description}"
+puts "Random Number:           #{OtherGenerator.random_number(1, 100)}"
+puts "Random Date:             #{OtherGenerator.random_date(Date.today - 365, Date.today)}"
+puts "Random Color:            #{OtherGenerator.random_color}"
+puts "Random Boolean:          #{OtherGenerator.random_boolean}"
+puts "Random UUID:             #{OtherGenerator.random_uuid}"
+puts
+
+puts '=== SocialGenerator ==='
+puts "Random Email:        #{SocialGenerator.random_email}"
+puts "Random IP Address:   #{SocialGenerator.random_ip_address}"
+puts "Random Phone Number: #{SocialGenerator.random_phone_number}"
+puts "Random Person Name:  #{SocialGenerator.random_person_name}"
+puts "Random Animal Name:  #{SocialGenerator.random_animal_name}"
+puts "Random Company Name: #{SocialGenerator.random_company_name}"
+puts "Random URL:          #{SocialGenerator.random_url}"
+puts
+
+puts '=== AddressGenerator ==='
+puts "Random City:        #{AddressGenerator.random_city}"
+puts "Random Street Name: #{AddressGenerator.random_street_name}"
+puts "Random Address:     #{AddressGenerator.random_address}"
+puts "Random Coordinates: #{AddressGenerator.random_coordinates.join(', ')}"
