@@ -1,0 +1,22 @@
+# GitHub Linguist configuration — keep the language breakdown focused on the
+# Ruby gem and Sinatra API, which are the project's core. The web/ tree is a
+# thin demo UI on top; build configs and the TypeScript port of the Ruby
+# generators should not skew the language stats.
+
+# Tooling / build / lint configuration — not authored project source
+web/vite.config.ts         linguist-vendored=true
+web/.eslintrc.cjs          linguist-vendored=true
+web/postcss.config.js      linguist-vendored=true
+web/tailwind.config.js     linguist-vendored=true
+
+# Client-side fallback that mirrors lib/random_data_generator/*.rb so the
+# static GitHub Pages build can run without the Sinatra backend — a port,
+# not original source.
+web/src/local-generator.ts linguist-generated=true
+
+# Build output and lockfiles
+web/dist/**                linguist-generated=true
+web/package-lock.json      linguist-generated=true
+
+# Frontend tests are not the primary language signal
+web/tests/**               linguist-detectable=false
