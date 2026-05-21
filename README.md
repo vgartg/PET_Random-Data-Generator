@@ -1,14 +1,14 @@
 # Random Data Generator
 
 [![CI](https://github.com/vgartg/PET_Random-Data-Generator/actions/workflows/ci.yml/badge.svg)](https://github.com/vgartg/PET_Random-Data-Generator/actions/workflows/ci.yml)
-[![Deploy](https://github.com/vgartg/PET_Random-Data-Generator/actions/workflows/deploy.yml/badge.svg)](https://github.com/vgartg/PET_Random-Data-Generator/actions/workflows/deploy.yml)
+[![Deploy](https://github.com/vgartg/PET_Random-Data-Generator/actions/workflows/deploy.yml/badge.svg)](https://github.com/vgartg/Random-Data-Generator/actions/workflows/deploy.yml)
 [![Live Demo](https://img.shields.io/badge/demo-live-22C55E?logo=githubpages&logoColor=white)](https://vgartg.github.io/PET_Random-Data-Generator/)
 [![Ruby](https://img.shields.io/badge/ruby-3.3-CC342D?logo=ruby&logoColor=white)](https://www.ruby-lang.org/)
 [![TypeScript](https://img.shields.io/badge/typescript-5.5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
 
-**Live demo:** <https://vgartg.github.io/PET_Random-Data-Generator/> — the SPA bundled with a TypeScript port of the generators, so the published build runs entirely in the browser without the Sinatra backend
+**Live demo:** <https://vgartg.github.io/Random-Data-Generator> — the SPA bundled with a TypeScript port of the generators, so the published build runs entirely in the browser without the Sinatra backend
 
 > A small Ruby library, a Sinatra JSON API and a TypeScript single-page UI for producing believable fake data on demand — built as a pet project to practice end-to-end Ruby + web tooling
 
