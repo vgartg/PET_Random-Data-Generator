@@ -1,6 +1,8 @@
 import type { GenerateResponse } from './types';
+import { generateLocal } from './local-generator';
 
 const API_BASE = (import.meta.env.VITE_API_BASE as string | undefined) ?? '';
+export const USE_LOCAL = (import.meta.env.VITE_USE_LOCAL as string | undefined) === '1';
 
 export class ApiError extends Error {
   status: number;
@@ -18,6 +20,15 @@ export async function generate(
   endpoint: string,
   params: Record<string, string | number> = {},
 ): Promise<GenerateResponse> {
+  if (USE_LOCAL) {
+    try {
+      return generateLocal(endpoint, params);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Generator error';
+      throw new ApiError(message, 400, { message });
+    }
+  }
+
   const url = new URL(`${API_BASE}${endpoint}`, window.location.origin);
   for (const [key, value] of Object.entries(params)) {
     if (value !== '' && value !== undefined && value !== null) {
@@ -49,6 +60,9 @@ export async function generate(
 }
 
 export async function health(): Promise<{ status: string; version: string }> {
+  if (USE_LOCAL) {
+    return { status: 'demo', version: '1.0.0' };
+  }
   const res = await fetch(`${API_BASE}/api/health`);
   if (!res.ok) throw new ApiError('Health check failed', res.status, null);
   return res.json();

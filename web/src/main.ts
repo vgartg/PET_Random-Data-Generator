@@ -1,7 +1,7 @@
 import './style.css';
 import { GENERATORS, CATEGORY_META } from './generators';
 import { createGeneratorCard } from './components/generator-card';
-import { health } from './api';
+import { health, USE_LOCAL } from './api';
 import type { GeneratorCategory } from './types';
 
 const root = document.querySelector<HTMLDivElement>('#app');
@@ -53,8 +53,11 @@ root.innerHTML = `
     <main id="grid" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"></main>
     <footer class="border-t border-slate-200 pt-6 text-sm text-slate-500">
       <p>
-        Built with Ruby, Sinatra and TypeScript &middot;
-        <a class="text-ruby-600 hover:underline" href="/api/generators">browse the API</a>
+        Built with Ruby, Sinatra and TypeScript${
+          USE_LOCAL
+            ? ''
+            : ' &middot; <a class="text-ruby-600 hover:underline" href="/api/generators">browse the API</a>'
+        }
       </p>
     </footer>
   </div>
@@ -122,7 +125,9 @@ renderGrid();
 
 health()
   .then((h) => {
-    healthEl.textContent = `API ${h.status} · v${h.version}`;
+    healthEl.textContent = USE_LOCAL
+      ? 'static demo · runs in your browser'
+      : `API ${h.status} · v${h.version}`;
   })
   .catch(() => {
     healthEl.textContent = 'API offline — start it with `bundle exec rackup`';
